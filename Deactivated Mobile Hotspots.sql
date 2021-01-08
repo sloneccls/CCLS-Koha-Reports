@@ -13,7 +13,7 @@ LEFT JOIN authorised_values v ON (i.notforloan=v.authorised_value)
 LEFT JOIN accountlines a USING (itemnumber)
 WHERE itype IN ('HOTSPOT')
   AND v.category='NOT_LOAN'
-  AND notforloan<>'0'
+  AND notforloan='3'
   AND onloan IS NULL
 GROUP BY itemnumber
 ORDER BY datelastseen
